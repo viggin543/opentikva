@@ -1,4 +1,4 @@
-class HelloWorld < Formula
+class Helloworld < Formula
   desc "an elf executable (golang) that prints hello world"
   homepage "https://bitbucket.org/innovid/dvnode/src/HEAD/dv-split/"
   version "0.2.2"
