@@ -3,7 +3,7 @@ class Helloworld < Formula
   homepage "https://github.com/viggin543/opentikva"
   version "0.3"
 
-  url "https://ln.sync.com/dl/68ba3f680/mbn8jw9f-ipi5e564-en4q65k3-isshisid", :using => :curl
+  url " https://opentikva.s3.amazonaws.com/hello", :using => :curl
 
 
   def install
