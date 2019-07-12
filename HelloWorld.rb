@@ -3,15 +3,15 @@ class Helloworld < Formula
   homepage "https://bitbucket.org/innovid/dvnode/src/HEAD/dv-split/"
   version "0.2.2"
 
-  url "git@bitbucket.org:innovid/dvnode.git", :using => :git
+  url "https://ln.sync.com/dl/68ba3f680/mbn8jw9f-ipi5e564-en4q65k3-isshisid", :using => :curl
 
 
   def install
-    bin.install "hello-world/hello"
+    bin.install "hello"
   end
 
   def uninstall
-    bin.uninstall "hello-world/hello"
+    bin.uninstall "hello"
   end
 
 end
