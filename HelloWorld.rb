@@ -7,6 +7,9 @@ class Helloworld < Formula
 
 
   def install
+    `echo 'installing hello world...'`
+    `pwd`
+    `ls -la`
     bin.install "hello"
   end
 
