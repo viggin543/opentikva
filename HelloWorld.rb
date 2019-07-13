@@ -8,10 +8,10 @@ class Helloworld < Formula
 
 
   def install
-    system("ls","-la")
-    system("echo","installing hello world...")
+    puts system("ls","-la")
+    puts system("echo","installing hello world...")
     system("pwd")
-    puts `ls -la`
+    
     puts bin
     
     bin.install "hello"
@@ -21,9 +21,6 @@ class Helloworld < Formula
     bin.uninstall "hello"
   end
 
-  def postinstall
-    puts 'thank you for installing this formula'
-  end
 
 end
 
