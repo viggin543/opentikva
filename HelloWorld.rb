@@ -12,16 +12,20 @@ class Helloworld < Formula
     system("echo","installing hello world...")
     system("pwd")
     puts `ls -la`
-    puts bin.install
-    install "hello"
+    puts bin
+    bin.install "hello"
   end
 
   def uninstall
     bin.uninstall "hello"
   end
 
+  def preinstall
+    puts 'this is going to be fun'
+  end
+
   def postinstall
-    puts `this was fun...`
+    puts 'this was fun...'
   end
 end
 
