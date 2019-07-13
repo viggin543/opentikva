@@ -12,7 +12,7 @@ class Helloworld < Formula
     puts system("echo","installing hello world...")
     system("pwd")
     
-    puts bin
+    puts bin.inspect
     
     bin.install "hello"
   end
