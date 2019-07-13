@@ -13,11 +13,16 @@ class Helloworld < Formula
     system("pwd")
     puts `ls -la`
     puts bin
+    
     bin.install "hello"
   end
 
   def uninstall
     bin.uninstall "hello"
+  end
+
+  def postinstall
+    puts 'thank you for installing this formula'
   end
 
 end
