@@ -20,12 +20,5 @@ class Helloworld < Formula
     bin.uninstall "hello"
   end
 
-  def preinstall
-    puts 'this is going to be fun'
-  end
-
-  def postinstall
-    puts 'this was fun...'
-  end
 end
 
