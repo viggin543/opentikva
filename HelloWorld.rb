@@ -14,13 +14,17 @@ class Helloworld < Formula
 
     puts `echo 'so it beggins...'`
     
-    puts bin.install.inspect
+    puts bin
     
     bin.install "hello"
   end
 
   def uninstall
     bin.uninstall "hello"
+  end
+
+  def post_install
+    puts 'thank you for using this tap'
   end
 
 
