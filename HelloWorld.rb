@@ -13,7 +13,7 @@ class Helloworld < Formula
     system("pwd")
     puts `ls -la`
     puts bin.install
-    bin.install "hello"
+    install "hello"
   end
 
   def uninstall
