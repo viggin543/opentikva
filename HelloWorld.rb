@@ -8,9 +8,9 @@ class Helloworld < Formula
 
 
   def install
-    `echo 'installing hello world...'`
-    `pwd`
-    `ls -la`
+    system("ls","-la")
+    system("echo","installing hello world...")
+    system("pwd")
     bin.install "hello"
   end
 
