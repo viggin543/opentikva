@@ -12,6 +12,7 @@ class Helloworld < Formula
     system("echo","installing hello world...")
     system("pwd")
     puts `ls -la`
+    puts bin
     bin.install "hello"
   end
 
