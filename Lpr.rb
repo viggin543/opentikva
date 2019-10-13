@@ -1,10 +1,10 @@
-class PullRequests < Formula
+class Lpr < Formula
   desc "an elf executable (golang) that prints hello world"
   homepage "https://github.com/viggin543/go_alfred/tree/master/github-pull-requests"
   version "0.3"
   
 
-  url "https://opentikva.s3.amazonaws.com/pull-requests", :using => :curl
+  url "https://opentikva.s3.amazonaws.com/lpr", :using => :curl
 
 
   def install
