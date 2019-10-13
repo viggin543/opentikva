@@ -1,20 +1,20 @@
-class PullRequests < Formula
+class Pullrequests < Formula
   desc "an elf executable (golang) that prints hello world"
   homepage "https://github.com/viggin543/go_alfred/tree/master/github-pull-requests"
 
   version "0.3"
   
 
-  url "https://opentikva.s3.amazonaws.com/PullRequests", :using => :curl
+  url "https://opentikva.s3.amazonaws.com/Pullrequests", :using => :curl
 
 
   def install
     system "echo" , "fetching binaries..."
-    bin.install "PullRequests"
+    bin.install "Pullrequests"
   end
 
   def uninstall
-    bin.uninstall "PullRequests"
+    bin.uninstall "Pullrequests"
   end
 
   def post_install
