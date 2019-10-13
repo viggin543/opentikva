@@ -1,4 +1,4 @@
-class Pull_Requests < Formula
+class PullRequests < Formula
   desc "an elf executable (golang) that prints hello world"
   homepage "https://github.com/viggin543/go_alfred/tree/master/github-pull-requests"
   version "0.3"
