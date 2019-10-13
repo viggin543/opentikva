@@ -8,14 +8,10 @@ class Helloworld < Formula
 
 
   def install
-    system("ls","-la")
-    system("echo","installing hello world...")
-    system("pwd")
-
-    puts `echo 'so it beggins...'`
-    
+    system "echo" , "banana"
+    puts `echo 'so it beggins... boris'`
+    puts `ls -la`
     puts bin
-    
     bin.install "hello"
   end
 
