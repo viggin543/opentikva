@@ -11,12 +11,24 @@ class Jiraticket < Formula
   depends_on "curl"
 
   def install
-    system  "fetching ..."
+    puts  "fetching ..."
     bin.install "createTicket"
   end
 
   def uninstall
     bin.uninstall "createTicket"
+  end
+
+
+  def post_install
+    puts "******************************************************************************************************************"
+    puts "*                                                                                                                *"
+    puts "*                                                                                                                *"
+    puts "*  create jira tickets using the command line                                                                    *"
+    puts "*  usage: createTicket <title> <description>                                                                     *"
+    puts "*                                                                                                                *"
+    puts "*                                                                                                                *"
+    puts "******************************************************************************************************************"
   end
 
 end
