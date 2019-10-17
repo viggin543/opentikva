@@ -1,6 +1,7 @@
 class Cleanbranches < Formula
   desc "delete local git branches that no longer exist on the remote"
   homepage "https://raw.githubusercontent.com/viggin543/go_alfred/master/cleanBrunches"
+  SHA-256 is: 9fbe03e2dc7aea6c331b81feb787bf72557599b09d71085b469f538e542b080f
 
 
   version "1"
@@ -19,7 +20,8 @@ class Cleanbranches < Formula
   end
 
   def post_install
-    system "echo" , "thank you for using this tap"
+    system  "thank you for using this tap"
+    system  "run cleanBrunches in a git repo do delete old and obsolete feature brunches that were deleted on the remote"
   end
 
 
