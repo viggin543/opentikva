@@ -21,11 +21,11 @@ class Cleanbranches < Formula
 
   def post_install
     puts "******************************************************************************************************************"
-    puts ""
-    puts ""
-    puts  "run cleanBrunches in a git repo do delete old and obsolete feature brunches that were deleted on the remote"
-    puts ""
-    puts ""
+    puts "*                                                                                                                *"
+    puts "*                                                                                                                *"
+    puts "*  run cleanBrunches in a git repo do delete old and obsolete feature brunches that were deleted on the remote   *"
+    puts "*                                                                                                                *"
+    puts "*                                                                                                                *"
     puts "******************************************************************************************************************"
   end
 
