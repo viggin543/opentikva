@@ -9,6 +9,7 @@ class Cleanbranches < Formula
 
   url "https://raw.githubusercontent.com/viggin543/go_alfred/master/cleanBrunches", :using => :curl
 
+  depends_on "git"
 
   def install
     puts "installing..."
