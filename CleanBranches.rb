@@ -1,7 +1,7 @@
 class Cleanbranches < Formula
   desc "delete local git branches that no longer exist on the remote"
   homepage "https://raw.githubusercontent.com/viggin543/go_alfred/master/cleanBrunches"
-  sha256 9fbe03e2dc7aea6c331b81feb787bf72557599b09d71085b469f538e542b080f
+  sha256 "9fbe03e2dc7aea6c331b81feb787bf72557599b09d71085b469f538e542b080f"
 
 
   version "1"

@@ -10,7 +10,7 @@ class Pullrequests < Formula
 
 
   def install
-    system "echo" , "fetching binaries..."
+    system  "fetching binaries..."
     bin.install "Pullrequests"
   end
 
