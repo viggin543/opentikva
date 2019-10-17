@@ -20,7 +20,7 @@ class Cleanbranches < Formula
   end
 
   def post_install
-    system  "run cleanBrunches in a git repo do delete old and obsolete feature brunches that were deleted on the remote"
+    puts  "run cleanBrunches in a git repo do delete old and obsolete feature brunches that were deleted on the remote"
   end
 
 
