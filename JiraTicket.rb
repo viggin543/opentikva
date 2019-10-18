@@ -1,7 +1,7 @@
 class Jiraticket < Formula
   desc "create a jira ticket from the command line"
   homepage "https://raw.githubusercontent.com/viggin543/go_alfred/master/createJiraTiket/createTicket"
-  sha256 "bea5ac9efd1f1cb1582327fbea2a6329c6ad2488fb74f37280c1c67c68f547bc"
+  # sha256 "bea5ac9efd1f1cb1582327fbea2a6329c6ad2488fb74f37280c1c67c68f547bc"
   version "1"
   
 
