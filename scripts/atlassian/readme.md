@@ -13,18 +13,21 @@ supports integration with alfred workflows.
 brew tap viggin543/opentikva git@github.com:viggin543/opentikva.git 
 brew install viggin543/opentikva/jira
 ---
-
+## usage:
+```
 usage: 
       ct|createTask <title> <description> <assignee> - creates a task
       ls|list  <-v:verbose>  - list  your current tasks
-
+```
+## configuration:
+```
 config env vars: 
    JIRA_USER 
    JIRA_DOMAIN - host of your jira http://'${JIRA_DOMAIN}'/rest/api/2...
    JIRA_PASS - jira api token: https://confluence.atlassian.com/cloud/api-tokens-938839638.html
    to check you'r credentials work try the following:
    curl -u JIRA_USER:JIRA_PASS 'https://JIRA_DOMAIN/rest/api/2/user/search?username=JIRA_USER'
-
+```
 
    ---
 
