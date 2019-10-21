@@ -1,14 +1,18 @@
 # jira command line tool
 ---
-## tired of waiting for jira ui to respond ?
-## no one likes opening tickets...
+### tired of waiting for jira ui to respond ?
+### no one likes opening tickets...
 
 jira command line tool .
 currently supports opening tasks.
 listing tasks assigned to you.
 
 supports integration with alfred workflows.
-
+---
+## intallation:
+brew tap viggin543/opentikva git@github.com:viggin543/opentikva.git 
+brew install viggin543/opentikva/jira
+---
 
 usage: 
       ct|createTask <title> <description> <assignee> - creates a task
