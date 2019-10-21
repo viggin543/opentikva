@@ -7,7 +7,7 @@ jira command line tool .
 currently supports opening tasks.
 listing tasks assigned to you.
 
-supports integration with alfred workflows.
+can be integrated with alfred workflows.
 ---
 ## intallation:
 
@@ -22,6 +22,40 @@ usage:
       ct|createTask <title> <description> <assignee> - creates a task
       ls|list  <-v:verbose>  - list  your current tasks
 ```
+### example:
+
+#### listing tickets
+assuming your jita project key is `KAN` 
+
+```
+$ jira ls 
+    KAN-123
+    KAN-456
+    KAN-457
+
+$ jira ls -v
+[
+...
+  {
+    "title": "KAN-8111",
+    "description": "be nice",
+    "url": "https://${JIRA_DOMAIN}/browse/KAN-8111"
+  },
+  {
+    "title": "KAN-7870",
+    "description": "eat veggies",
+    "url": "https://${JIRA_DOMAIN}/browse/KAN-7870"
+  }
+]
+```
+#### creating tickets
+```
+$ jira createTask title "a very detailed description" igor
+
+https://${JIRA_DOMAIN}/browse/KAN-123
+```
+ 
+
 ## configuration:
 ```
 config env vars: 
