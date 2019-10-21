@@ -10,8 +10,11 @@ listing tasks assigned to you.
 supports integration with alfred workflows.
 ---
 ## intallation:
+
+```bash
 brew tap viggin543/opentikva git@github.com:viggin543/opentikva.git 
 brew install viggin543/opentikva/jira
+```
 ---
 ## usage:
 ```
