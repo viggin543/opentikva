@@ -1,0 +1,75 @@
+#!/bin/bash
+printUsage(){
+   cat << EOF 
+   usage: 
+      -h - print this info
+      ct|createTask <title> <description> <assignee> - creates a task
+      ls|list - list  your current tasks
+
+   config env vars: 
+   JIRA_USER 
+   JIRA_DOMAIN - host of your jira http://'${JIRA_DOMAIN}'/rest/api/2...
+   JIRA_PASS - jira api token: https://confluence.atlassian.com/cloud/api-tokens-938839638.html
+   to check you'r credentials work try the following:
+   curl -u JIRA_USER:JIRA_PASS 'https://JIRA_DOMAIN/rest/api/2/user/search?username=JIRA_USER'
+EOF
+}
+assertEnv(){
+   if [[ `env | grep $1 | wc -l` -ne 1 ]]; then 
+      echo "'$1' env var is missing, plz add it to your env (zsh profile)" && exit 1
+   fi   
+}
+for i in JIRA_USER JIRA_DOMAIN JIRA_PASS; do assertEnv $i;done 
+
+fetchIssues(){
+   curl -s -u $JIRA_USER:$JIRA_PASS  https://$JIRA_DOMAIN/rest/api/2/search\
+      -H 'Accept:application/json'\
+      -H 'Content-Type:application/json'\
+      -d "{\"jql\":\"assignee = \\\"${JIRA_USER}\\\" AND Status in (\\\"To Do\\\" ,\\\"In Progress\\\",\\\"Review\\\")  \",\"startAt\":0,\"maxResults\":30}"
+}
+
+listTasks(){
+   issues="$(fetchIssues)"
+   if [[ $2 == "-v" ]]; then 
+      echo $issues | jq '.issues  | map({title:.key,description:.fields.summary,url:("https://tg17home.atlassian.net/browse/"+.key)})'
+   else 
+      echo $issues | jq -r '.issues  | map(.key) | .[]'
+   fi
+}
+
+createTask(){
+   if [[ $# -ne 4 ]]; then printUsage; exit 1; fi
+   shift
+   assignee=(`curl -s -u ${JIRA_USER}:${JIRA_PASS} "https://${JIRA_DOMAIN}/rest/api/2/user/assignable/search?project=UD" | jq -r .[].name | grep -i $3`)
+   if [[ ${#assignee[@]} -eq 0 ]]; then echo "invalid assignee.. $3. we dont have shuch team member."; exit 1; fi
+   if [[ ${#assignee[@]} -ge 2 ]]; then echo " $3 is not uniq. plz specify team member explicitly from: ${assignee[@]} "; exit 1; fi
+   TICKET=$(cat << EOF
+{
+  "fields": {
+    "project": {
+      "key": "UD"
+    },
+    "summary": "${1}",
+    "description": "${2}",
+    "customfield_10064": {
+      "value": "Backend"
+    },
+    "issuetype": {
+      "name": "Task"
+    },
+    "assignee": {
+      "name": "${assignee[0]}"
+    }
+  }
+}
+EOF
+)
+
+   curl -s -d "${TICKET}" -u ${JIRA_USER}:${JIRA_PASS} -H "Content-Type: application/json" "https://${JIRA_DOMAIN}/rest/api/2/issue/" | jq -r "(\"https://${JIRA_DOMAIN}/browse/\"+.key)"
+}
+
+case $1 in 
+   ct|createTask) createTask "$@";;
+   ls|list) listTasks "$@";;
+   -h|*) printUsage ;;
+esac
