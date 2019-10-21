@@ -4,8 +4,7 @@
 ### no one likes opening tickets...
 
 jira command line tool .
-currently supports opening tasks.
-listing tasks assigned to you.
+
 
 can be integrated with alfred workflows.
 ---
