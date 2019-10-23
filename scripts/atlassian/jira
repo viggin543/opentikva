@@ -5,6 +5,7 @@ printUsage(){
       -h - print this info
       ct|createTask <title> <description> <assignee> - creates a task
       ls|list - list  your current tasks
+      open <issue id> - open jira issue in browser
 
    config env vars: 
    JIRA_USER 
@@ -71,6 +72,6 @@ EOF
 case $1 in 
    ct|createTask) createTask "$@";;
    ls|list) listTasks "$@";;
-   open) open "https://${JIRA_DOMAIN}/browse/UD-${1}" ;;
+   open) open "https://${JIRA_DOMAIN}/browse/UD-${2}" ;;
    -h|*) printUsage ;;
 esac
