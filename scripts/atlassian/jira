@@ -71,5 +71,6 @@ EOF
 case $1 in 
    ct|createTask) createTask "$@";;
    ls|list) listTasks "$@";;
+   open) open "https://${JIRA_DOMAIN}/browse/UD-${1}" ;;
    -h|*) printUsage ;;
 esac
