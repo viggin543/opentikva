@@ -1,18 +1,17 @@
-class JiraCli < Formula
-  desc "jira command line tool. $ jira_cli -h for usage info"
-  homepage "https://github.com/viggin543/jira_cli"
-  # sha256 "667e0e03aafc984a27e869ed544d9461fbf9ea0f32d8b16611dbdaf74a18a009"
+class Jira < Formula
+  desc "jira command line tool. $ jira -h for usage info"
+  homepage "https://github.com/viggin543/jira"
   version "1"
 
-  url "https://opentikva.s3.amazonaws.com/jira_cli", :using => :curl
+  url "https://opentikva.s3.amazonaws.com/jira", :using => :curl
 
   def install
-    puts  "fetching ..."
-    bin.install "jira_cli"
+    puts  "fetching binary..."
+    bin.install "jira"
   end
 
   def uninstall
-    bin.uninstall "jira_cli"
+    bin.uninstall "jira"
   end
 
 
