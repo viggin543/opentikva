@@ -1,7 +1,7 @@
 class Jira < Formula
   desc "jira command line tool. $ jira -h for usage info"
   homepage "https://github.com/viggin543/jira"
-  sha256 "c779ff5c7e73e3df4981312b6fc3c5769df400bbbe663ce3345f97b60d1fa147"
+  sha256 "0ec8b35bd1ec39a86d8fc60575debc70228a342d7a34fefce026d66768ef6a39"
   version "1"
 
   url "https://opentikva.s3.amazonaws.com/jira", :using => :curl
