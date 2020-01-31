@@ -13,6 +13,9 @@ class Jira < Formula
 
   def uninstall
     bin.uninstall "jira"
+    File.delete("~/.jira_epics") if File.exist?("~/.jira_epics")
+    File.delete("~/.jira_history") if File.exist?("~/.jira_history")
+    File.delete("~/.jira.yaml") if File.exist?("~/.jira.yaml")
   end
 
 
