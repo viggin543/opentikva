@@ -13,9 +13,10 @@ class Jira < Formula
 
   def uninstall
     bin.uninstall "jira"
-    `rm -f ~/.jira_epics`
-    `rm -f ~/.jira_history`
-    `rm -f ~/.jira.yaml`
+    homeDir = File.expand_path('~')
+    File.delete("#{homeDir}/.jira_epics") if File.exist?("#{homeDir}/.jira_epics")
+    File.delete("#{homeDir}/.jira_history") if File.exist?("#{homeDir}/.jira_history")
+    File.delete("#{homeDir}/.jira.yaml") if File.exist?("#{homeDir}/.jira.yaml")
   end
 
 
