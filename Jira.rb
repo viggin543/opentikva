@@ -9,6 +9,7 @@ class Jira < Formula
   def install
     puts  "fetching go binary..."
     bin.install "jira"
+    `ls -la`
     bash_completion.install "completions.bash"
     zsh_completion.install "completions.bash"
   end
