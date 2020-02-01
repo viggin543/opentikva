@@ -5,10 +5,13 @@ class Jira < Formula
   version "1"
 
   url "https://opentikva.s3.amazonaws.com/jira", :using => :curl
+  url "https://raw.githubusercontent.com/viggin543/jira/master/completions.bash", :using => :curl
 
   def install
-    puts  "fetching binary..."
+    puts  "fetching go binary..."
     bin.install "jira"
+    bash_completion.install "completions.bash"
+    zsh_completion.install "completions.bash"
   end
 
   def uninstall
@@ -19,6 +22,11 @@ class Jira < Formula
     File.delete("#{homeDir}/.jira.yaml") if File.exist?("#{homeDir}/.jira.yaml")
   end
 
+  def caveats
+    <<~EOS
+      Make sure you initialized proper env vars / ~/.jira.yaml
+    EOS
+  end
 
   def post_install
     puts "******************************************************************************************************************"
