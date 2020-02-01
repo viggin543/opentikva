@@ -1,10 +1,10 @@
 class Jira < Formula
   desc "jira command line tool. $ jira -h for usage info"
   homepage "https://github.com/viggin543/jira"
-  sha256 "2f7c17b78bae7ee6e38ef2c3ddd58a3c474c791c242ce5140af162159231a242"
+  sha256 "daade3f8cd14450b6bbd7bf0dcaf9a15532dd84e9a7e2545e5ed4749568284aa"
   version "1"
 
-  url "https://opentikva.s3.amazonaws.com/jira", :using => :curl
+  url "https://opentikva.s3.amazonaws.com/jira_cli.tar.gz", :using => :curl
 
   def install
     puts  "fetching go binary..."
