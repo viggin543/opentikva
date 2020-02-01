@@ -9,7 +9,7 @@ class Jira < Formula
   def install
     puts `cp completions.bash completions.zsh`
     bin.install "jira"
-    bash_completion.install "completions.bash"
+    bash_completion.install "completions.bash" => "jira"
     zsh_completion.install "completions.zsh" => "_jira"
   end
 
@@ -24,17 +24,15 @@ class Jira < Formula
   def caveats
     <<~EOS
       Make sure you initialized proper env vars / ~/.jira.yaml
+      To enable zsh completions plz
+      echo 'source /usr/local/share/zsh/site-functions/_jira' >> ~/.zshrc
     EOS
   end
 
   def post_install
     puts "******************************************************************************************************************"
-    puts "*                                                                                                                *"
-    puts "*                                                                                                                *"
     puts "*  jira command line tool                                                                                        *"
     puts "*  usage: jira -h                                                                                                *"
-    puts "*                                                                                                                *"
-    puts "*                                                                                                                *"
     puts "******************************************************************************************************************"
   end
 
