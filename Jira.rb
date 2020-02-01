@@ -10,7 +10,7 @@ class Jira < Formula
     puts `cp completions.bash completions.zsh`
     bin.install "jira"
     bash_completion.install "completions.bash"
-    zsh_completion.install "completions.zsh"
+    zsh_completion.install "completions.zsh" => "_jira"
   end
 
   def uninstall
