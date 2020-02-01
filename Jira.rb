@@ -7,11 +7,10 @@ class Jira < Formula
   url "https://opentikva.s3.amazonaws.com/jira_cli.tar.gz", :using => :curl
 
   def install
-    puts  "fetching go binary..."
     puts `ls -la`
     bin.install "jira"
-    bash_completion.install "completions.bash"
-    zsh_completion.install "completions.bash"
+    bash_completion.install "./completions.bash"
+    zsh_completion.install "./completions.bash"
   end
 
   def uninstall
