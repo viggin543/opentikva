@@ -1,0 +1,10 @@
+#!/usr/bin/python
+
+import sys
+if len(sys.argv) == 2:
+    print 'https://<bucket-name>.s3.amazonaws.com/<key>'.replace(
+        '<bucket-name>',
+	       sys.argv[1].rsplit('/')[2]).replace(
+        '<key>', '/'.join(sys.argv[1].rsplit('/')[3:]))
+else:
+    print 'usage: s3tourl <S3_LOCK> '
